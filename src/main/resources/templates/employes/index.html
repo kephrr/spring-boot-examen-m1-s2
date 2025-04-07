@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout"
+>
+<section layout:fragment="contentForView">
+    EMPLOYERS
+    <small th:if="${errorMessage}" th:text="${errorMessage}"></small>
+    <small th:if="${returnMessage}" th:text="${returnMessage}"></small>
+    <div th:each="emp:${employes}">
+        <h1 th:text="${emp.matr}"></h1>
+        <p th:text="${emp.nom}"></p>
+        <p th:text="${emp.prenom}"></p>
+        <p th:text="${emp.salaireBase}"></p>
+    </div>
+</section>
+</html>

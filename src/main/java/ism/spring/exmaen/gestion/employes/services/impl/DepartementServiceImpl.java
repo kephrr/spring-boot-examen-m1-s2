@@ -27,7 +27,7 @@ public class DepartementServiceImpl implements DepartementService {
 
     @Override
     public Optional<Departement> findById(String code) {
-        return departementRepository.findById(code);
+        return departementRepository.findByCodeDepAndIsActiveTrue(code);
     }
 
     @Override

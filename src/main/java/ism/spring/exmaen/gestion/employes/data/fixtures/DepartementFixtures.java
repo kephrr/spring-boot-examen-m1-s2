@@ -8,7 +8,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Order(0)
-@Component
+//@Component
 @RequiredArgsConstructor
 public class DepartementFixtures implements CommandLineRunner {
     private final IDepartementRepository departementRepository;

@@ -1,6 +1,8 @@
 package ism.spring.exmaen.gestion.employes.services.impl;
 
+import ism.spring.exmaen.gestion.employes.data.entities.Departement;
 import ism.spring.exmaen.gestion.employes.data.entities.Employe;
+import ism.spring.exmaen.gestion.employes.data.repositories.IDepartementRepository;
 import ism.spring.exmaen.gestion.employes.data.repositories.IEmployesRepository;
 import ism.spring.exmaen.gestion.employes.services.EmployeService;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +29,7 @@ public class EmployeServiceImpl implements EmployeService {
 
     @Override
     public Optional<Employe> findById(Long id) {
-        return employesRepository.findById(id);
+        return employesRepository.findByMatrAndIsActiveTrue(id);
     }
 
     @Override
@@ -44,4 +46,18 @@ public class EmployeServiceImpl implements EmployeService {
         }
         return 0;
     }
+
+    @Override
+    public Page<Employe> findAllByDepartements(Pageable pageable, Departement departement) {
+        return employesRepository.findAllByIsActiveTrueAndDepartement(departement, pageable);
+    }
 }
+
+
+
+
+
+
+
+
+
