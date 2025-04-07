@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Order(1)
-@Component
+//@Component
 @RequiredArgsConstructor
 public class EmployeFixtures implements CommandLineRunner {
     private final IEmployesRepository employesRepository;
