@@ -123,10 +123,8 @@ public class IEmployeControllerImpl implements IEmployeController {
             List<String> errors =new ArrayList<>();
             List<FieldError> fieldErrors = result.getFieldErrors();
             fieldErrors.forEach(fieldError -> errors.add(fieldError.getDefaultMessage()));
-            System.out.println("ERR : " + errors);
             model.addAttribute("errors", errors);
         }else{
-            System.out.println("MATRICULE RECUPERE "+form.getMatr());
             try {
                 Employe editingEmp = form.toEntity();
                 Employe emp = employeService.findById(editingEmp.getMatr()).orElse(null);
