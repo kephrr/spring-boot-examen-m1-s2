@@ -6,9 +6,7 @@
 >
 <section layout:fragment="contentForView">
     <div class="flex flex-col justify-center items-center p-4 max-w-screen">
-        <h1 class="my-2  dark:text-white font-bold text-2xl" >Liste des departements</h1>
-        <a href="/departements/create">Nouveau</a>
-        <div class="flex w-full justify-center">
+        <div class="flex w-full justify-center my-2">
             <div th:if="${errorMessage}" id="toast-danger" class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800" role="alert">
                 <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -41,6 +39,9 @@
                 </button>
             </div>
         </div>
+
+        <h1 class="my-2  dark:text-white font-bold text-2xl" >Liste des departements</h1>
+        <a href="/departements/create" class="bg-indigo-100 text-indigo-800 text-xs font-medium me-2 m-2 px-2.5 py-0.5 rounded-sm dark:bg-indigo-900 dark:text-indigo-300">Nouveau</a>
 
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg min-w-5xl">
             <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
